@@ -1,0 +1,151 @@
+[2024-10-08T23:46:36.577+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-08T23:46:36.586+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: breweries_data_pipeline.data_aggregation manual__2024-10-08T23:45:40.611116+00:00 [queued]>
+[2024-10-08T23:46:36.590+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: breweries_data_pipeline.data_aggregation manual__2024-10-08T23:45:40.611116+00:00 [queued]>
+[2024-10-08T23:46:36.590+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-10-08T23:46:36.598+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): data_aggregation> on 2024-10-08 23:45:40.611116+00:00
+[2024-10-08T23:46:36.603+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=342) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-08T23:46:36.604+0000] {standard_task_runner.py:72} INFO - Started process 344 to run task
+[2024-10-08T23:46:36.605+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'breweries_data_pipeline', 'data_aggregation', 'manual__2024-10-08T23:45:40.611116+00:00', '--job-id', '176', '--raw', '--subdir', 'DAGS_FOLDER/breweries_pipeline_dag.py', '--cfg-path', '/tmp/tmplyqclby2']
+[2024-10-08T23:46:36.605+0000] {standard_task_runner.py:105} INFO - Job 176: Subtask data_aggregation
+[2024-10-08T23:46:36.629+0000] {task_command.py:467} INFO - Running <TaskInstance: breweries_data_pipeline.data_aggregation manual__2024-10-08T23:45:40.611116+00:00 [running]> on host 6aea32cdc444
+[2024-10-08T23:46:36.675+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='breweries_data_pipeline' AIRFLOW_CTX_TASK_ID='data_aggregation' AIRFLOW_CTX_EXECUTION_DATE='2024-10-08T23:45:40.611116+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-08T23:45:40.611116+00:00'
+[2024-10-08T23:46:36.676+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-08T23:46:36.676+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-08T23:46:36.676+0000] {logging_mixin.py:190} INFO - Current task name:data_aggregation state:running start_date:2024-10-08 23:46:36.586431+00:00
+[2024-10-08T23:46:36.676+0000] {logging_mixin.py:190} INFO - Dag name:breweries_data_pipeline and current dag run status:running
+[2024-10-08T23:46:36.676+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-08T23:46:36.677+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-08T23:46:36.677+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/usr/local/bin/python3 /opt/***/scripts/data_aggregation.py']
+[2024-10-08T23:46:36.684+0000] {subprocess.py:86} INFO - Output:
+[2024-10-08T23:46:37.273+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,273 INFO: Starting Gold Layer processing.
+[2024-10-08T23:46:37.278+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,277 INFO: 114 most recent Parquet files found in the Silver Layer.
+[2024-10-08T23:46:37.315+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,314 INFO: File read: /opt/***/data/silver_layer/england/east_sussex/data_20241008_234635.parquet with 31 records.
+[2024-10-08T23:46:37.316+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,316 INFO: File read: /opt/***/data/silver_layer/england/west_sussex/data_20241008_234635.parquet with 31 records.
+[2024-10-08T23:46:37.318+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,318 INFO: File read: /opt/***/data/silver_layer/poland/dolnoslaskie/data_20241008_234635.parquet with 34 records.
+[2024-10-08T23:46:37.319+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,319 INFO: File read: /opt/***/data/silver_layer/scotland/argyll/data_20241008_234635.parquet with 4 records.
+[2024-10-08T23:46:37.321+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,321 INFO: File read: /opt/***/data/silver_layer/scotland/east_dunbartonshire/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.322+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,322 INFO: File read: /opt/***/data/silver_layer/scotland/bute/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.324+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,324 INFO: File read: /opt/***/data/silver_layer/scotland/west_dunbartonshire/data_20241008_234635.parquet with 4 records.
+[2024-10-08T23:46:37.326+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,325 INFO: File read: /opt/***/data/silver_layer/singapore/singapore/data_20241008_234635.parquet with 33 records.
+[2024-10-08T23:46:37.327+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,327 INFO: File read: /opt/***/data/silver_layer/austria/steiermark/data_20241008_234635.parquet with 7 records.
+[2024-10-08T23:46:37.328+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,328 INFO: File read: /opt/***/data/silver_layer/austria/niederosterreich/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.330+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,330 INFO: File read: /opt/***/data/silver_layer/austria/karnten/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.331+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,331 INFO: File read: /opt/***/data/silver_layer/austria/oberosterreich/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.333+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,333 INFO: File read: /opt/***/data/silver_layer/united_states/montana/data_20241008_234635.parquet with 92 records.
+[2024-10-08T23:46:37.334+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,334 INFO: File read: /opt/***/data/silver_layer/united_states/mississippi/data_20241008_234635.parquet with 17 records.
+[2024-10-08T23:46:37.336+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,336 INFO: File read: /opt/***/data/silver_layer/united_states/alaska/data_20241008_234635.parquet with 51 records.
+[2024-10-08T23:46:37.337+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,337 INFO: File read: /opt/***/data/silver_layer/united_states/missouri/data_20241008_234635.parquet with 142 records.
+[2024-10-08T23:46:37.339+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,339 INFO: File read: /opt/***/data/silver_layer/united_states/illinois/data_20241008_234635.parquet with 257 records.
+[2024-10-08T23:46:37.341+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,341 INFO: File read: /opt/***/data/silver_layer/united_states/wisconsin/data_20241008_234635.parquet with 225 records.
+[2024-10-08T23:46:37.343+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,343 INFO: File read: /opt/***/data/silver_layer/united_states/indiana/data_20241008_234635.parquet with 162 records.
+[2024-10-08T23:46:37.344+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,344 INFO: File read: /opt/***/data/silver_layer/united_states/new_jersey/data_20241008_234635.parquet with 115 records.
+[2024-10-08T23:46:37.346+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,346 INFO: File read: /opt/***/data/silver_layer/united_states/utah/data_20241008_234635.parquet with 45 records.
+[2024-10-08T23:46:37.347+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,347 INFO: File read: /opt/***/data/silver_layer/united_states/kentucky/data_20241008_234635.parquet with 58 records.
+[2024-10-08T23:46:37.349+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,349 INFO: File read: /opt/***/data/silver_layer/united_states/wyoming/data_20241008_234635.parquet with 43 records.
+[2024-10-08T23:46:37.350+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,350 INFO: File read: /opt/***/data/silver_layer/united_states/rhode_island/data_20241008_234635.parquet with 31 records.
+[2024-10-08T23:46:37.352+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,352 INFO: File read: /opt/***/data/silver_layer/united_states/massachusetts/data_20241008_234635.parquet with 163 records.
+[2024-10-08T23:46:37.353+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,353 INFO: File read: /opt/***/data/silver_layer/united_states/vermont/data_20241008_234635.parquet with 59 records.
+[2024-10-08T23:46:37.356+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,355 INFO: File read: /opt/***/data/silver_layer/united_states/oregon/data_20241008_234635.parquet with 295 records.
+[2024-10-08T23:46:37.357+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,357 INFO: File read: /opt/***/data/silver_layer/united_states/new_hampshire/data_20241008_234635.parquet with 80 records.
+[2024-10-08T23:46:37.359+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,358 INFO: File read: /opt/***/data/silver_layer/united_states/alabama/data_20241008_234635.parquet with 45 records.
+[2024-10-08T23:46:37.360+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,360 INFO: File read: /opt/***/data/silver_layer/united_states/florida/data_20241008_234635.parquet with 312 records.
+[2024-10-08T23:46:37.362+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,362 INFO: File read: /opt/***/data/silver_layer/united_states/hawaii/data_20241008_234635.parquet with 23 records.
+[2024-10-08T23:46:37.364+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,363 INFO: File read: /opt/***/data/silver_layer/united_states/north_dakota/data_20241008_234635.parquet with 26 records.
+[2024-10-08T23:46:37.365+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,365 INFO: File read: /opt/***/data/silver_layer/united_states/connecticut/data_20241008_234635.parquet with 94 records.
+[2024-10-08T23:46:37.367+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,367 INFO: File read: /opt/***/data/silver_layer/united_states/new_york/data_20241008_234635.parquet with 418 records.
+[2024-10-08T23:46:37.369+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,369 INFO: File read: /opt/***/data/silver_layer/united_states/maryland/data_20241008_234635.parquet with 109 records.
+[2024-10-08T23:46:37.371+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,370 INFO: File read: /opt/***/data/silver_layer/united_states/delaware/data_20241008_234635.parquet with 28 records.
+[2024-10-08T23:46:37.372+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,372 INFO: File read: /opt/***/data/silver_layer/united_states/texas/data_20241008_234635.parquet with 352 records.
+[2024-10-08T23:46:37.374+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,374 INFO: File read: /opt/***/data/silver_layer/united_states/kansas/data_20241008_234635.parquet with 47 records.
+[2024-10-08T23:46:37.376+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,375 INFO: File read: /opt/***/data/silver_layer/united_states/arkansas/data_20241008_234635.parquet with 45 records.
+[2024-10-08T23:46:37.377+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,377 INFO: File read: /opt/***/data/silver_layer/united_states/district_of_columbia/data_20241008_234635.parquet with 16 records.
+[2024-10-08T23:46:37.378+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,378 INFO: File read: /opt/***/data/silver_layer/united_states/louisiana/data_20241008_234635.parquet with 43 records.
+[2024-10-08T23:46:37.380+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,380 INFO: File read: /opt/***/data/silver_layer/united_states/michigan/data_20241008_234635.parquet with 375 records.
+[2024-10-08T23:46:37.383+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,383 INFO: File read: /opt/***/data/silver_layer/united_states/california/data_20241008_234635.parquet with 917 records.
+[2024-10-08T23:46:37.385+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,384 INFO: File read: /opt/***/data/silver_layer/united_states/arizona/data_20241008_234635.parquet with 124 records.
+[2024-10-08T23:46:37.386+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,386 INFO: File read: /opt/***/data/silver_layer/united_states/ohio/data_20241008_234635.parquet with 303 records.
+[2024-10-08T23:46:37.388+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,388 INFO: File read: /opt/***/data/silver_layer/united_states/washington/data_20241008_234635.parquet with 473 records.
+[2024-10-08T23:46:37.390+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,390 INFO: File read: /opt/***/data/silver_layer/united_states/south_carolina/data_20241008_234635.parquet with 79 records.
+[2024-10-08T23:46:37.391+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,391 INFO: File read: /opt/***/data/silver_layer/united_states/nevada/data_20241008_234635.parquet with 51 records.
+[2024-10-08T23:46:37.393+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,393 INFO: File read: /opt/***/data/silver_layer/united_states/nebraska/data_20241008_234635.parquet with 57 records.
+[2024-10-08T23:46:37.394+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,394 INFO: File read: /opt/***/data/silver_layer/united_states/maine/data_20241008_234635.parquet with 114 records.
+[2024-10-08T23:46:37.396+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,396 INFO: File read: /opt/***/data/silver_layer/united_states/virginia/data_20241008_234635.parquet with 254 records.
+[2024-10-08T23:46:37.398+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,398 INFO: File read: /opt/***/data/silver_layer/united_states/georgia/data_20241008_234635.parquet with 100 records.
+[2024-10-08T23:46:37.399+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,399 INFO: File read: /opt/***/data/silver_layer/united_states/south_dakota/data_20241008_234635.parquet with 45 records.
+[2024-10-08T23:46:37.401+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,401 INFO: File read: /opt/***/data/silver_layer/united_states/north_carolina/data_20241008_234635.parquet with 307 records.
+[2024-10-08T23:46:37.403+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,403 INFO: File read: /opt/***/data/silver_layer/united_states/pennsylvania/data_20241008_234635.parquet with 345 records.
+[2024-10-08T23:46:37.404+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,404 INFO: File read: /opt/***/data/silver_layer/united_states/idaho/data_20241008_234635.parquet with 67 records.
+[2024-10-08T23:46:37.406+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,406 INFO: File read: /opt/***/data/silver_layer/united_states/oklahoma/data_20241008_234635.parquet with 44 records.
+[2024-10-08T23:46:37.407+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,407 INFO: File read: /opt/***/data/silver_layer/united_states/west_virginia/data_20241008_234635.parquet with 40 records.
+[2024-10-08T23:46:37.409+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,409 INFO: File read: /opt/***/data/silver_layer/united_states/new_mexico/data_20241008_234635.parquet with 83 records.
+[2024-10-08T23:46:37.411+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,411 INFO: File read: /opt/***/data/silver_layer/united_states/iowa/data_20241008_234635.parquet with 91 records.
+[2024-10-08T23:46:37.412+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,412 INFO: File read: /opt/***/data/silver_layer/united_states/tennessee/data_20241008_234635.parquet with 111 records.
+[2024-10-08T23:46:37.414+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,414 INFO: File read: /opt/***/data/silver_layer/united_states/colorado/data_20241008_234635.parquet with 448 records.
+[2024-10-08T23:46:37.416+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,416 INFO: File read: /opt/***/data/silver_layer/united_states/minnesota/data_20241008_234635.parquet with 182 records.
+[2024-10-08T23:46:37.418+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,417 INFO: File read: /opt/***/data/silver_layer/portugal/beja/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.419+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,419 INFO: File read: /opt/***/data/silver_layer/portugal/aveiro/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.420+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,420 INFO: File read: /opt/***/data/silver_layer/portugal/leiria/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.422+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,422 INFO: File read: /opt/***/data/silver_layer/portugal/coimbra/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.423+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,423 INFO: File read: /opt/***/data/silver_layer/portugal/faro/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.425+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,424 INFO: File read: /opt/***/data/silver_layer/portugal/portalegre/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.426+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,426 INFO: File read: /opt/***/data/silver_layer/portugal/porto/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.427+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,427 INFO: File read: /opt/***/data/silver_layer/portugal/lisboa/data_20241008_234635.parquet with 5 records.
+[2024-10-08T23:46:37.428+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,428 INFO: File read: /opt/***/data/silver_layer/france/bouche_du_rhone/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.430+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,430 INFO: File read: /opt/***/data/silver_layer/isle_of_man/middle/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.431+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,431 INFO: File read: /opt/***/data/silver_layer/ireland/clare/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.432+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,432 INFO: File read: /opt/***/data/silver_layer/ireland/tipperary/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.434+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,434 INFO: File read: /opt/***/data/silver_layer/ireland/cork/data_20241008_234635.parquet with 11 records.
+[2024-10-08T23:46:37.435+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,435 INFO: File read: /opt/***/data/silver_layer/ireland/roscommon/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.436+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,436 INFO: File read: /opt/***/data/silver_layer/ireland/meath/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.438+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,438 INFO: File read: /opt/***/data/silver_layer/ireland/longford/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.439+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,439 INFO: File read: /opt/***/data/silver_layer/ireland/wicklow/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.440+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,440 INFO: File read: /opt/***/data/silver_layer/ireland/monaghan/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.442+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,441 INFO: File read: /opt/***/data/silver_layer/ireland/laois/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.443+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,443 INFO: File read: /opt/***/data/silver_layer/ireland/wexford/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.444+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,444 INFO: File read: /opt/***/data/silver_layer/ireland/westmeath/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.446+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,445 INFO: File read: /opt/***/data/silver_layer/ireland/waterford/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.447+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,447 INFO: File read: /opt/***/data/silver_layer/ireland/kilkenny/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.448+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,448 INFO: File read: /opt/***/data/silver_layer/ireland/carlow/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.449+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,449 INFO: File read: /opt/***/data/silver_layer/ireland/sligo/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.451+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,451 INFO: File read: /opt/***/data/silver_layer/ireland/donegal/data_20241008_234635.parquet with 4 records.
+[2024-10-08T23:46:37.452+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,452 INFO: File read: /opt/***/data/silver_layer/ireland/kildare/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.453+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,453 INFO: File read: /opt/***/data/silver_layer/ireland/galway/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.455+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,455 INFO: File read: /opt/***/data/silver_layer/ireland/offaly/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.456+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,456 INFO: File read: /opt/***/data/silver_layer/ireland/kerry/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.457+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,457 INFO: File read: /opt/***/data/silver_layer/ireland/limerick/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.459+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,459 INFO: File read: /opt/***/data/silver_layer/ireland/louth/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.460+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,460 INFO: File read: /opt/***/data/silver_layer/ireland/dublin/data_20241008_234635.parquet with 16 records.
+[2024-10-08T23:46:37.461+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,461 INFO: File read: /opt/***/data/silver_layer/ireland/mayo/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.463+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,463 INFO: File read: /opt/***/data/silver_layer/sweden/blekinge/data_20241008_234635.parquet with 6 records.
+[2024-10-08T23:46:37.464+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,464 INFO: File read: /opt/***/data/silver_layer/germany/berlin/data_20241008_234635.parquet with 10 records.
+[2024-10-08T23:46:37.465+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,465 INFO: File read: /opt/***/data/silver_layer/south_korea/chungcheongbukdo/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.467+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,467 INFO: File read: /opt/***/data/silver_layer/south_korea/gangwondo/data_20241008_234635.parquet with 7 records.
+[2024-10-08T23:46:37.468+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,468 INFO: File read: /opt/***/data/silver_layer/south_korea/incheon/data_20241008_234635.parquet with 2 records.
+[2024-10-08T23:46:37.470+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,469 INFO: File read: /opt/***/data/silver_layer/south_korea/chungcheongnamdo/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.472+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,472 INFO: File read: /opt/***/data/silver_layer/south_korea/jejudo/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.473+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,473 INFO: File read: /opt/***/data/silver_layer/south_korea/gyeongsangnamdo/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.474+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,474 INFO: File read: /opt/***/data/silver_layer/south_korea/daejeon/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.476+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,476 INFO: File read: /opt/***/data/silver_layer/south_korea/gyeongsangbukdo/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.477+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,477 INFO: File read: /opt/***/data/silver_layer/south_korea/busan/data_20241008_234635.parquet with 9 records.
+[2024-10-08T23:46:37.479+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,479 INFO: File read: /opt/***/data/silver_layer/south_korea/gyeonggido/data_20241008_234635.parquet with 9 records.
+[2024-10-08T23:46:37.480+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,480 INFO: File read: /opt/***/data/silver_layer/south_korea/seoul/data_20241008_234635.parquet with 14 records.
+[2024-10-08T23:46:37.481+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,481 INFO: File read: /opt/***/data/silver_layer/south_korea/deagu/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.483+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,483 INFO: File read: /opt/***/data/silver_layer/south_korea/gwangju/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.484+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,484 INFO: File read: /opt/***/data/silver_layer/south_korea/jeollanamdo/data_20241008_234635.parquet with 1 records.
+[2024-10-08T23:46:37.485+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,485 INFO: File read: /opt/***/data/silver_layer/south_korea/jeollabukdo/data_20241008_234635.parquet with 3 records.
+[2024-10-08T23:46:37.497+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,497 INFO: Total records after concatenation: 8322
+[2024-10-08T23:46:37.502+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,501 INFO: Aggregation by country, state, and brewery type saved to /opt/***/data/gold_layer/brewery_aggregated_state_20241008_234637.parquet
+[2024-10-08T23:46:37.504+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,504 INFO: Aggregation by country and brewery type saved to /opt/***/data/gold_layer/brewery_aggregated_country_20241008_234637.parquet
+[2024-10-08T23:46:37.506+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:37,505 INFO: Gold Layer processing completed.
+[2024-10-08T23:46:37.541+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-10-08T23:46:37.554+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-08T23:46:37.555+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=breweries_data_pipeline, task_id=data_aggregation, run_id=manual__2024-10-08T23:45:40.611116+00:00, execution_date=20241008T234540, start_date=20241008T234636, end_date=20241008T234637
+[2024-10-08T23:46:37.560+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-08T23:46:37.561+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-08T23:46:37.561+0000] {logging_mixin.py:190} INFO - Dag name:breweries_data_pipeline queued_at:2024-10-08 23:45:40.618077+00:00
+[2024-10-08T23:46:37.561+0000] {logging_mixin.py:190} INFO - Task hostname:6aea32cdc444 operator:BashOperator
+[2024-10-08T23:46:37.604+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-08T23:46:37.619+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-08T23:46:37.621+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

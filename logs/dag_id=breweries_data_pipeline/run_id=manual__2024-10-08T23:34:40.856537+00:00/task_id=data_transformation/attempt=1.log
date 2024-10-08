@@ -1,0 +1,149 @@
+[2024-10-08T23:35:32.220+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-08T23:35:32.228+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: breweries_data_pipeline.data_transformation manual__2024-10-08T23:34:40.856537+00:00 [queued]>
+[2024-10-08T23:35:32.231+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: breweries_data_pipeline.data_transformation manual__2024-10-08T23:34:40.856537+00:00 [queued]>
+[2024-10-08T23:35:32.231+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-10-08T23:35:32.239+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): data_transformation> on 2024-10-08 23:34:40.856537+00:00
+[2024-10-08T23:35:32.243+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=283) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-08T23:35:32.244+0000] {standard_task_runner.py:72} INFO - Started process 285 to run task
+[2024-10-08T23:35:32.244+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'breweries_data_pipeline', 'data_transformation', 'manual__2024-10-08T23:34:40.856537+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/breweries_pipeline_dag.py', '--cfg-path', '/tmp/tmpccdfflqv']
+[2024-10-08T23:35:32.244+0000] {standard_task_runner.py:105} INFO - Job 103: Subtask data_transformation
+[2024-10-08T23:35:32.268+0000] {task_command.py:467} INFO - Running <TaskInstance: breweries_data_pipeline.data_transformation manual__2024-10-08T23:34:40.856537+00:00 [running]> on host 3fbc15be3147
+[2024-10-08T23:35:32.310+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='breweries_data_pipeline' AIRFLOW_CTX_TASK_ID='data_transformation' AIRFLOW_CTX_EXECUTION_DATE='2024-10-08T23:34:40.856537+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-08T23:34:40.856537+00:00'
+[2024-10-08T23:35:32.311+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-08T23:35:32.311+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-08T23:35:32.311+0000] {logging_mixin.py:190} INFO - Current task name:data_transformation state:running start_date:2024-10-08 23:35:32.228235+00:00
+[2024-10-08T23:35:32.311+0000] {logging_mixin.py:190} INFO - Dag name:breweries_data_pipeline and current dag run status:running
+[2024-10-08T23:35:32.312+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-08T23:35:32.312+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-08T23:35:32.312+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/usr/local/bin/python3 /opt/***/scripts/data_transformation.py']
+[2024-10-08T23:35:32.318+0000] {subprocess.py:86} INFO - Output:
+[2024-10-08T23:35:32.869+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:32,869 INFO: Starting data transformation process.
+[2024-10-08T23:35:32.911+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:32,910 INFO: Data successfully loaded from /opt/***/data/bronze_layer/breweries_raw_20241008_233531.json
+[2024-10-08T23:35:32.913+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:32,913 INFO: Invalid brewery types removed. Remaining records: 8322
+[2024-10-08T23:35:33.001+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,001 INFO: Data saved to /opt/***/data/silver_layer/austria/karnten/data_20241008_233532.parquet
+[2024-10-08T23:35:33.003+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,003 INFO: Data saved to /opt/***/data/silver_layer/austria/niederosterreich/data_20241008_233532.parquet
+[2024-10-08T23:35:33.006+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,006 INFO: Data saved to /opt/***/data/silver_layer/austria/oberosterreich/data_20241008_233532.parquet
+[2024-10-08T23:35:33.008+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,008 INFO: Data saved to /opt/***/data/silver_layer/austria/steiermark/data_20241008_233532.parquet
+[2024-10-08T23:35:33.010+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,010 INFO: Data saved to /opt/***/data/silver_layer/england/east_sussex/data_20241008_233532.parquet
+[2024-10-08T23:35:33.013+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,012 INFO: Data saved to /opt/***/data/silver_layer/england/west_sussex/data_20241008_233532.parquet
+[2024-10-08T23:35:33.015+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,015 INFO: Data saved to /opt/***/data/silver_layer/france/bouche_du_rhone/data_20241008_233532.parquet
+[2024-10-08T23:35:33.017+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,017 INFO: Data saved to /opt/***/data/silver_layer/germany/berlin/data_20241008_233532.parquet
+[2024-10-08T23:35:33.019+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,019 INFO: Data saved to /opt/***/data/silver_layer/ireland/carlow/data_20241008_233532.parquet
+[2024-10-08T23:35:33.021+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,021 INFO: Data saved to /opt/***/data/silver_layer/ireland/clare/data_20241008_233532.parquet
+[2024-10-08T23:35:33.023+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,023 INFO: Data saved to /opt/***/data/silver_layer/ireland/cork/data_20241008_233532.parquet
+[2024-10-08T23:35:33.024+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,024 INFO: Data saved to /opt/***/data/silver_layer/ireland/donegal/data_20241008_233532.parquet
+[2024-10-08T23:35:33.026+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,026 INFO: Data saved to /opt/***/data/silver_layer/ireland/dublin/data_20241008_233532.parquet
+[2024-10-08T23:35:33.028+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,028 INFO: Data saved to /opt/***/data/silver_layer/ireland/galway/data_20241008_233532.parquet
+[2024-10-08T23:35:33.030+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,030 INFO: Data saved to /opt/***/data/silver_layer/ireland/kerry/data_20241008_233532.parquet
+[2024-10-08T23:35:33.032+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,032 INFO: Data saved to /opt/***/data/silver_layer/ireland/kildare/data_20241008_233532.parquet
+[2024-10-08T23:35:33.034+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,034 INFO: Data saved to /opt/***/data/silver_layer/ireland/kilkenny/data_20241008_233532.parquet
+[2024-10-08T23:35:33.036+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,036 INFO: Data saved to /opt/***/data/silver_layer/ireland/laois/data_20241008_233532.parquet
+[2024-10-08T23:35:33.038+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,038 INFO: Data saved to /opt/***/data/silver_layer/ireland/limerick/data_20241008_233532.parquet
+[2024-10-08T23:35:33.040+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,040 INFO: Data saved to /opt/***/data/silver_layer/ireland/longford/data_20241008_233532.parquet
+[2024-10-08T23:35:33.042+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,042 INFO: Data saved to /opt/***/data/silver_layer/ireland/louth/data_20241008_233532.parquet
+[2024-10-08T23:35:33.045+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,045 INFO: Data saved to /opt/***/data/silver_layer/ireland/mayo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.047+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,047 INFO: Data saved to /opt/***/data/silver_layer/ireland/meath/data_20241008_233532.parquet
+[2024-10-08T23:35:33.049+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,049 INFO: Data saved to /opt/***/data/silver_layer/ireland/monaghan/data_20241008_233532.parquet
+[2024-10-08T23:35:33.050+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,050 INFO: Data saved to /opt/***/data/silver_layer/ireland/offaly/data_20241008_233532.parquet
+[2024-10-08T23:35:33.052+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,052 INFO: Data saved to /opt/***/data/silver_layer/ireland/roscommon/data_20241008_233532.parquet
+[2024-10-08T23:35:33.054+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,054 INFO: Data saved to /opt/***/data/silver_layer/ireland/sligo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.056+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,056 INFO: Data saved to /opt/***/data/silver_layer/ireland/tipperary/data_20241008_233532.parquet
+[2024-10-08T23:35:33.058+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,057 INFO: Data saved to /opt/***/data/silver_layer/ireland/waterford/data_20241008_233532.parquet
+[2024-10-08T23:35:33.059+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,059 INFO: Data saved to /opt/***/data/silver_layer/ireland/westmeath/data_20241008_233532.parquet
+[2024-10-08T23:35:33.061+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,061 INFO: Data saved to /opt/***/data/silver_layer/ireland/wexford/data_20241008_233532.parquet
+[2024-10-08T23:35:33.063+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,063 INFO: Data saved to /opt/***/data/silver_layer/ireland/wicklow/data_20241008_233532.parquet
+[2024-10-08T23:35:33.064+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,064 INFO: Data saved to /opt/***/data/silver_layer/isle_of_man/middle/data_20241008_233532.parquet
+[2024-10-08T23:35:33.066+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,066 INFO: Data saved to /opt/***/data/silver_layer/poland/dolnoslaskie/data_20241008_233532.parquet
+[2024-10-08T23:35:33.068+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,068 INFO: Data saved to /opt/***/data/silver_layer/portugal/aveiro/data_20241008_233532.parquet
+[2024-10-08T23:35:33.070+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,070 INFO: Data saved to /opt/***/data/silver_layer/portugal/beja/data_20241008_233532.parquet
+[2024-10-08T23:35:33.072+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,071 INFO: Data saved to /opt/***/data/silver_layer/portugal/coimbra/data_20241008_233532.parquet
+[2024-10-08T23:35:33.073+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,073 INFO: Data saved to /opt/***/data/silver_layer/portugal/faro/data_20241008_233532.parquet
+[2024-10-08T23:35:33.075+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,075 INFO: Data saved to /opt/***/data/silver_layer/portugal/leiria/data_20241008_233532.parquet
+[2024-10-08T23:35:33.077+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,077 INFO: Data saved to /opt/***/data/silver_layer/portugal/lisboa/data_20241008_233532.parquet
+[2024-10-08T23:35:33.079+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,079 INFO: Data saved to /opt/***/data/silver_layer/portugal/portalegre/data_20241008_233532.parquet
+[2024-10-08T23:35:33.081+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,081 INFO: Data saved to /opt/***/data/silver_layer/portugal/porto/data_20241008_233532.parquet
+[2024-10-08T23:35:33.083+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,083 INFO: Data saved to /opt/***/data/silver_layer/scotland/argyll/data_20241008_233532.parquet
+[2024-10-08T23:35:33.084+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,084 INFO: Data saved to /opt/***/data/silver_layer/scotland/bute/data_20241008_233532.parquet
+[2024-10-08T23:35:33.087+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,086 INFO: Data saved to /opt/***/data/silver_layer/scotland/east_dunbartonshire/data_20241008_233532.parquet
+[2024-10-08T23:35:33.089+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,088 INFO: Data saved to /opt/***/data/silver_layer/scotland/west_dunbartonshire/data_20241008_233532.parquet
+[2024-10-08T23:35:33.090+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,090 INFO: Data saved to /opt/***/data/silver_layer/singapore/singapore/data_20241008_233532.parquet
+[2024-10-08T23:35:33.092+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,092 INFO: Data saved to /opt/***/data/silver_layer/south_korea/busan/data_20241008_233532.parquet
+[2024-10-08T23:35:33.094+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,094 INFO: Data saved to /opt/***/data/silver_layer/south_korea/chungcheongbukdo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.095+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,095 INFO: Data saved to /opt/***/data/silver_layer/south_korea/chungcheongnamdo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.096+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,096 INFO: Data saved to /opt/***/data/silver_layer/south_korea/daejeon/data_20241008_233532.parquet
+[2024-10-08T23:35:33.098+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,098 INFO: Data saved to /opt/***/data/silver_layer/south_korea/deagu/data_20241008_233532.parquet
+[2024-10-08T23:35:33.100+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,100 INFO: Data saved to /opt/***/data/silver_layer/south_korea/gangwondo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.101+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,101 INFO: Data saved to /opt/***/data/silver_layer/south_korea/gwangju/data_20241008_233532.parquet
+[2024-10-08T23:35:33.103+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,103 INFO: Data saved to /opt/***/data/silver_layer/south_korea/gyeonggido/data_20241008_233532.parquet
+[2024-10-08T23:35:33.104+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,104 INFO: Data saved to /opt/***/data/silver_layer/south_korea/gyeongsangbukdo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.106+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,106 INFO: Data saved to /opt/***/data/silver_layer/south_korea/gyeongsangnamdo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.107+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,107 INFO: Data saved to /opt/***/data/silver_layer/south_korea/incheon/data_20241008_233532.parquet
+[2024-10-08T23:35:33.109+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,109 INFO: Data saved to /opt/***/data/silver_layer/south_korea/jejudo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.110+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,110 INFO: Data saved to /opt/***/data/silver_layer/south_korea/jeollabukdo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.111+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,111 INFO: Data saved to /opt/***/data/silver_layer/south_korea/jeollanamdo/data_20241008_233532.parquet
+[2024-10-08T23:35:33.114+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,114 INFO: Data saved to /opt/***/data/silver_layer/south_korea/seoul/data_20241008_233532.parquet
+[2024-10-08T23:35:33.115+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,115 INFO: Data saved to /opt/***/data/silver_layer/sweden/blekinge/data_20241008_233532.parquet
+[2024-10-08T23:35:33.117+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,117 INFO: Data saved to /opt/***/data/silver_layer/united_states/alabama/data_20241008_233532.parquet
+[2024-10-08T23:35:33.118+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,118 INFO: Data saved to /opt/***/data/silver_layer/united_states/alaska/data_20241008_233532.parquet
+[2024-10-08T23:35:33.120+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,120 INFO: Data saved to /opt/***/data/silver_layer/united_states/arizona/data_20241008_233532.parquet
+[2024-10-08T23:35:33.122+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,122 INFO: Data saved to /opt/***/data/silver_layer/united_states/arkansas/data_20241008_233532.parquet
+[2024-10-08T23:35:33.125+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,125 INFO: Data saved to /opt/***/data/silver_layer/united_states/california/data_20241008_233532.parquet
+[2024-10-08T23:35:33.128+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,128 INFO: Data saved to /opt/***/data/silver_layer/united_states/colorado/data_20241008_233532.parquet
+[2024-10-08T23:35:33.129+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,129 INFO: Data saved to /opt/***/data/silver_layer/united_states/connecticut/data_20241008_233532.parquet
+[2024-10-08T23:35:33.131+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,131 INFO: Data saved to /opt/***/data/silver_layer/united_states/delaware/data_20241008_233532.parquet
+[2024-10-08T23:35:33.132+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,132 INFO: Data saved to /opt/***/data/silver_layer/united_states/district_of_columbia/data_20241008_233532.parquet
+[2024-10-08T23:35:33.134+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,134 INFO: Data saved to /opt/***/data/silver_layer/united_states/florida/data_20241008_233532.parquet
+[2024-10-08T23:35:33.136+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,136 INFO: Data saved to /opt/***/data/silver_layer/united_states/georgia/data_20241008_233532.parquet
+[2024-10-08T23:35:33.138+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,137 INFO: Data saved to /opt/***/data/silver_layer/united_states/hawaii/data_20241008_233532.parquet
+[2024-10-08T23:35:33.139+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,139 INFO: Data saved to /opt/***/data/silver_layer/united_states/idaho/data_20241008_233532.parquet
+[2024-10-08T23:35:33.150+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,150 INFO: Data saved to /opt/***/data/silver_layer/united_states/illinois/data_20241008_233532.parquet
+[2024-10-08T23:35:33.152+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,152 INFO: Data saved to /opt/***/data/silver_layer/united_states/indiana/data_20241008_233532.parquet
+[2024-10-08T23:35:33.154+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,154 INFO: Data saved to /opt/***/data/silver_layer/united_states/iowa/data_20241008_233532.parquet
+[2024-10-08T23:35:33.155+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,155 INFO: Data saved to /opt/***/data/silver_layer/united_states/kansas/data_20241008_233532.parquet
+[2024-10-08T23:35:33.157+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,157 INFO: Data saved to /opt/***/data/silver_layer/united_states/kentucky/data_20241008_233532.parquet
+[2024-10-08T23:35:33.159+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,158 INFO: Data saved to /opt/***/data/silver_layer/united_states/louisiana/data_20241008_233532.parquet
+[2024-10-08T23:35:33.160+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,160 INFO: Data saved to /opt/***/data/silver_layer/united_states/maine/data_20241008_233532.parquet
+[2024-10-08T23:35:33.162+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,162 INFO: Data saved to /opt/***/data/silver_layer/united_states/maryland/data_20241008_233532.parquet
+[2024-10-08T23:35:33.164+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,164 INFO: Data saved to /opt/***/data/silver_layer/united_states/massachusetts/data_20241008_233532.parquet
+[2024-10-08T23:35:33.166+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,166 INFO: Data saved to /opt/***/data/silver_layer/united_states/michigan/data_20241008_233532.parquet
+[2024-10-08T23:35:33.168+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,168 INFO: Data saved to /opt/***/data/silver_layer/united_states/minnesota/data_20241008_233532.parquet
+[2024-10-08T23:35:33.170+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,170 INFO: Data saved to /opt/***/data/silver_layer/united_states/mississippi/data_20241008_233532.parquet
+[2024-10-08T23:35:33.171+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,171 INFO: Data saved to /opt/***/data/silver_layer/united_states/missouri/data_20241008_233532.parquet
+[2024-10-08T23:35:33.173+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,173 INFO: Data saved to /opt/***/data/silver_layer/united_states/montana/data_20241008_233532.parquet
+[2024-10-08T23:35:33.175+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,174 INFO: Data saved to /opt/***/data/silver_layer/united_states/nebraska/data_20241008_233532.parquet
+[2024-10-08T23:35:33.176+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,176 INFO: Data saved to /opt/***/data/silver_layer/united_states/nevada/data_20241008_233532.parquet
+[2024-10-08T23:35:33.178+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,178 INFO: Data saved to /opt/***/data/silver_layer/united_states/new_hampshire/data_20241008_233532.parquet
+[2024-10-08T23:35:33.180+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,179 INFO: Data saved to /opt/***/data/silver_layer/united_states/new_jersey/data_20241008_233532.parquet
+[2024-10-08T23:35:33.182+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,182 INFO: Data saved to /opt/***/data/silver_layer/united_states/new_mexico/data_20241008_233532.parquet
+[2024-10-08T23:35:33.184+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,184 INFO: Data saved to /opt/***/data/silver_layer/united_states/new_york/data_20241008_233532.parquet
+[2024-10-08T23:35:33.186+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,186 INFO: Data saved to /opt/***/data/silver_layer/united_states/north_carolina/data_20241008_233532.parquet
+[2024-10-08T23:35:33.188+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,188 INFO: Data saved to /opt/***/data/silver_layer/united_states/north_dakota/data_20241008_233532.parquet
+[2024-10-08T23:35:33.190+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,190 INFO: Data saved to /opt/***/data/silver_layer/united_states/ohio/data_20241008_233532.parquet
+[2024-10-08T23:35:33.191+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,191 INFO: Data saved to /opt/***/data/silver_layer/united_states/oklahoma/data_20241008_233532.parquet
+[2024-10-08T23:35:33.193+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,193 INFO: Data saved to /opt/***/data/silver_layer/united_states/oregon/data_20241008_233532.parquet
+[2024-10-08T23:35:33.196+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,196 INFO: Data saved to /opt/***/data/silver_layer/united_states/pennsylvania/data_20241008_233532.parquet
+[2024-10-08T23:35:33.197+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,197 INFO: Data saved to /opt/***/data/silver_layer/united_states/rhode_island/data_20241008_233532.parquet
+[2024-10-08T23:35:33.199+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,199 INFO: Data saved to /opt/***/data/silver_layer/united_states/south_carolina/data_20241008_233532.parquet
+[2024-10-08T23:35:33.201+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,200 INFO: Data saved to /opt/***/data/silver_layer/united_states/south_dakota/data_20241008_233532.parquet
+[2024-10-08T23:35:33.203+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,203 INFO: Data saved to /opt/***/data/silver_layer/united_states/tennessee/data_20241008_233532.parquet
+[2024-10-08T23:35:33.205+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,205 INFO: Data saved to /opt/***/data/silver_layer/united_states/texas/data_20241008_233532.parquet
+[2024-10-08T23:35:33.206+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,206 INFO: Data saved to /opt/***/data/silver_layer/united_states/utah/data_20241008_233532.parquet
+[2024-10-08T23:35:33.208+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,208 INFO: Data saved to /opt/***/data/silver_layer/united_states/vermont/data_20241008_233532.parquet
+[2024-10-08T23:35:33.210+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,210 INFO: Data saved to /opt/***/data/silver_layer/united_states/virginia/data_20241008_233532.parquet
+[2024-10-08T23:35:33.213+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,213 INFO: Data saved to /opt/***/data/silver_layer/united_states/washington/data_20241008_233532.parquet
+[2024-10-08T23:35:33.215+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,215 INFO: Data saved to /opt/***/data/silver_layer/united_states/west_virginia/data_20241008_233532.parquet
+[2024-10-08T23:35:33.217+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,217 INFO: Data saved to /opt/***/data/silver_layer/united_states/wisconsin/data_20241008_233532.parquet
+[2024-10-08T23:35:33.218+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,218 INFO: Data saved to /opt/***/data/silver_layer/united_states/wyoming/data_20241008_233532.parquet
+[2024-10-08T23:35:33.222+0000] {subprocess.py:93} INFO - 2024-10-08 23:35:33,222 INFO: Data transformation process completed in 0.35 seconds.
+[2024-10-08T23:35:33.265+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-10-08T23:35:33.279+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-08T23:35:33.280+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=breweries_data_pipeline, task_id=data_transformation, run_id=manual__2024-10-08T23:34:40.856537+00:00, execution_date=20241008T233440, start_date=20241008T233532, end_date=20241008T233533
+[2024-10-08T23:35:33.286+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-08T23:35:33.286+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-08T23:35:33.287+0000] {logging_mixin.py:190} INFO - Dag name:breweries_data_pipeline queued_at:2024-10-08 23:34:40.865239+00:00
+[2024-10-08T23:35:33.287+0000] {logging_mixin.py:190} INFO - Task hostname:3fbc15be3147 operator:BashOperator
+[2024-10-08T23:35:33.299+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-08T23:35:33.313+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-08T23:35:33.315+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

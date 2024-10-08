@@ -1,0 +1,203 @@
+[2024-10-08T23:45:42.944+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-08T23:45:42.952+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: breweries_data_pipeline.data_ingestion manual__2024-10-08T23:45:40.611116+00:00 [queued]>
+[2024-10-08T23:45:42.956+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: breweries_data_pipeline.data_ingestion manual__2024-10-08T23:45:40.611116+00:00 [queued]>
+[2024-10-08T23:45:42.956+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-10-08T23:45:42.963+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): data_ingestion> on 2024-10-08 23:45:40.611116+00:00
+[2024-10-08T23:45:42.967+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=277) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-08T23:45:42.968+0000] {standard_task_runner.py:72} INFO - Started process 279 to run task
+[2024-10-08T23:45:42.968+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'breweries_data_pipeline', 'data_ingestion', 'manual__2024-10-08T23:45:40.611116+00:00', '--job-id', '174', '--raw', '--subdir', 'DAGS_FOLDER/breweries_pipeline_dag.py', '--cfg-path', '/tmp/tmpxinboao1']
+[2024-10-08T23:45:42.969+0000] {standard_task_runner.py:105} INFO - Job 174: Subtask data_ingestion
+[2024-10-08T23:45:42.993+0000] {task_command.py:467} INFO - Running <TaskInstance: breweries_data_pipeline.data_ingestion manual__2024-10-08T23:45:40.611116+00:00 [running]> on host 6aea32cdc444
+[2024-10-08T23:45:43.036+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='breweries_data_pipeline' AIRFLOW_CTX_TASK_ID='data_ingestion' AIRFLOW_CTX_EXECUTION_DATE='2024-10-08T23:45:40.611116+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-08T23:45:40.611116+00:00'
+[2024-10-08T23:45:43.037+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-08T23:45:43.038+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-08T23:45:43.038+0000] {logging_mixin.py:190} INFO - Current task name:data_ingestion state:running start_date:2024-10-08 23:45:42.952624+00:00
+[2024-10-08T23:45:43.038+0000] {logging_mixin.py:190} INFO - Dag name:breweries_data_pipeline and current dag run status:running
+[2024-10-08T23:45:43.038+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-08T23:45:43.038+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-08T23:45:43.039+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/usr/local/bin/python3 /opt/***/scripts/data_ingestion.py']
+[2024-10-08T23:45:43.045+0000] {subprocess.py:86} INFO - Output:
+[2024-10-08T23:45:43.330+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:43 INFO: Starting data ingestion process.
+[2024-10-08T23:45:43.438+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:43 INFO: Page 1 retrieved with 50 records.
+[2024-10-08T23:45:43.528+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:43 INFO: Page 2 retrieved with 50 records.
+[2024-10-08T23:45:43.945+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:43 INFO: Page 3 retrieved with 50 records.
+[2024-10-08T23:45:44.045+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:44 INFO: Page 4 retrieved with 50 records.
+[2024-10-08T23:45:44.463+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:44 INFO: Page 5 retrieved with 50 records.
+[2024-10-08T23:45:44.868+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:44 INFO: Page 6 retrieved with 50 records.
+[2024-10-08T23:45:45.283+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:45 INFO: Page 7 retrieved with 50 records.
+[2024-10-08T23:45:45.715+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:45 INFO: Page 8 retrieved with 50 records.
+[2024-10-08T23:45:45.805+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:45 INFO: Page 9 retrieved with 50 records.
+[2024-10-08T23:45:46.214+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:46 INFO: Page 10 retrieved with 50 records.
+[2024-10-08T23:45:46.619+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:46 INFO: Page 11 retrieved with 50 records.
+[2024-10-08T23:45:47.134+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:47 INFO: Page 12 retrieved with 50 records.
+[2024-10-08T23:45:47.246+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:47 INFO: Page 13 retrieved with 50 records.
+[2024-10-08T23:45:47.321+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:47 INFO: Page 14 retrieved with 50 records.
+[2024-10-08T23:45:47.746+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:47 INFO: Page 15 retrieved with 50 records.
+[2024-10-08T23:45:47.832+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:47 INFO: Page 16 retrieved with 50 records.
+[2024-10-08T23:45:48.244+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:48 INFO: Page 17 retrieved with 50 records.
+[2024-10-08T23:45:48.653+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:48 INFO: Page 18 retrieved with 50 records.
+[2024-10-08T23:45:48.746+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:48 INFO: Page 19 retrieved with 50 records.
+[2024-10-08T23:45:48.837+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:48 INFO: Page 20 retrieved with 50 records.
+[2024-10-08T23:45:48.924+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:48 INFO: Page 21 retrieved with 50 records.
+[2024-10-08T23:45:49.338+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:49 INFO: Page 22 retrieved with 50 records.
+[2024-10-08T23:45:49.743+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:49 INFO: Page 23 retrieved with 50 records.
+[2024-10-08T23:45:49.846+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:49 INFO: Page 24 retrieved with 50 records.
+[2024-10-08T23:45:50.249+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:50 INFO: Page 25 retrieved with 50 records.
+[2024-10-08T23:45:50.650+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:50 INFO: Page 26 retrieved with 50 records.
+[2024-10-08T23:45:51.054+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:51 INFO: Page 27 retrieved with 50 records.
+[2024-10-08T23:45:51.161+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:51 INFO: Page 28 retrieved with 50 records.
+[2024-10-08T23:45:51.577+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:51 INFO: Page 29 retrieved with 50 records.
+[2024-10-08T23:45:51.992+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:51 INFO: Page 30 retrieved with 50 records.
+[2024-10-08T23:45:52.390+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:52 INFO: Page 31 retrieved with 50 records.
+[2024-10-08T23:45:52.801+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:52 INFO: Page 32 retrieved with 50 records.
+[2024-10-08T23:45:53.209+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:53 INFO: Page 33 retrieved with 50 records.
+[2024-10-08T23:45:53.305+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:53 INFO: Page 34 retrieved with 50 records.
+[2024-10-08T23:45:53.388+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:53 INFO: Page 35 retrieved with 50 records.
+[2024-10-08T23:45:53.797+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:53 INFO: Page 36 retrieved with 50 records.
+[2024-10-08T23:45:53.896+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:53 INFO: Page 37 retrieved with 50 records.
+[2024-10-08T23:45:53.981+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:53 INFO: Page 38 retrieved with 50 records.
+[2024-10-08T23:45:54.400+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:54 INFO: Page 39 retrieved with 50 records.
+[2024-10-08T23:45:54.495+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:54 INFO: Page 40 retrieved with 50 records.
+[2024-10-08T23:45:54.903+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:54 INFO: Page 41 retrieved with 50 records.
+[2024-10-08T23:45:55.315+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:55 INFO: Page 42 retrieved with 50 records.
+[2024-10-08T23:45:55.727+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:55 INFO: Page 43 retrieved with 50 records.
+[2024-10-08T23:45:56.138+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:56 INFO: Page 44 retrieved with 50 records.
+[2024-10-08T23:45:56.536+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:56 INFO: Page 45 retrieved with 50 records.
+[2024-10-08T23:45:56.944+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:56 INFO: Page 46 retrieved with 50 records.
+[2024-10-08T23:45:57.038+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:57 INFO: Page 47 retrieved with 50 records.
+[2024-10-08T23:45:57.117+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:57 INFO: Page 48 retrieved with 50 records.
+[2024-10-08T23:45:57.523+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:57 INFO: Page 49 retrieved with 50 records.
+[2024-10-08T23:45:57.615+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:57 INFO: Page 50 retrieved with 50 records.
+[2024-10-08T23:45:58.020+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:58 INFO: Page 51 retrieved with 50 records.
+[2024-10-08T23:45:58.440+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:58 INFO: Page 52 retrieved with 50 records.
+[2024-10-08T23:45:58.853+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:58 INFO: Page 53 retrieved with 50 records.
+[2024-10-08T23:45:58.934+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:58 INFO: Page 54 retrieved with 50 records.
+[2024-10-08T23:45:59.026+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:59 INFO: Page 55 retrieved with 50 records.
+[2024-10-08T23:45:59.435+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:59 INFO: Page 56 retrieved with 50 records.
+[2024-10-08T23:45:59.521+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:59 INFO: Page 57 retrieved with 50 records.
+[2024-10-08T23:45:59.603+0000] {subprocess.py:93} INFO - 2024-10-08 23:45:59 INFO: Page 58 retrieved with 50 records.
+[2024-10-08T23:46:00.010+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:00 INFO: Page 59 retrieved with 50 records.
+[2024-10-08T23:46:00.096+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:00 INFO: Page 60 retrieved with 50 records.
+[2024-10-08T23:46:00.501+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:00 INFO: Page 61 retrieved with 50 records.
+[2024-10-08T23:46:00.594+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:00 INFO: Page 62 retrieved with 50 records.
+[2024-10-08T23:46:01.003+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:01 INFO: Page 63 retrieved with 50 records.
+[2024-10-08T23:46:01.111+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:01 INFO: Page 64 retrieved with 50 records.
+[2024-10-08T23:46:01.647+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:01 INFO: Page 65 retrieved with 50 records.
+[2024-10-08T23:46:02.064+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:02 INFO: Page 66 retrieved with 50 records.
+[2024-10-08T23:46:02.483+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:02 INFO: Page 67 retrieved with 50 records.
+[2024-10-08T23:46:02.885+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:02 INFO: Page 68 retrieved with 50 records.
+[2024-10-08T23:46:03.313+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:03 INFO: Page 69 retrieved with 50 records.
+[2024-10-08T23:46:03.716+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:03 INFO: Page 70 retrieved with 50 records.
+[2024-10-08T23:46:04.115+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:04 INFO: Page 71 retrieved with 50 records.
+[2024-10-08T23:46:04.216+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:04 INFO: Page 72 retrieved with 50 records.
+[2024-10-08T23:46:04.322+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:04 INFO: Page 73 retrieved with 50 records.
+[2024-10-08T23:46:04.412+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:04 INFO: Page 74 retrieved with 50 records.
+[2024-10-08T23:46:04.505+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:04 INFO: Page 75 retrieved with 50 records.
+[2024-10-08T23:46:04.598+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:04 INFO: Page 76 retrieved with 50 records.
+[2024-10-08T23:46:05.008+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:05 INFO: Page 77 retrieved with 50 records.
+[2024-10-08T23:46:05.418+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:05 INFO: Page 78 retrieved with 50 records.
+[2024-10-08T23:46:05.947+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:05 INFO: Page 79 retrieved with 50 records.
+[2024-10-08T23:46:06.064+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:06 INFO: Page 80 retrieved with 50 records.
+[2024-10-08T23:46:06.482+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:06 INFO: Page 81 retrieved with 50 records.
+[2024-10-08T23:46:06.564+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:06 INFO: Page 82 retrieved with 50 records.
+[2024-10-08T23:46:07.073+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:07 INFO: Page 83 retrieved with 50 records.
+[2024-10-08T23:46:07.233+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:07 INFO: Page 84 retrieved with 50 records.
+[2024-10-08T23:46:07.655+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:07 INFO: Page 85 retrieved with 50 records.
+[2024-10-08T23:46:07.743+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:07 INFO: Page 86 retrieved with 50 records.
+[2024-10-08T23:46:08.176+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:08 INFO: Page 87 retrieved with 50 records.
+[2024-10-08T23:46:08.728+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:08 INFO: Page 88 retrieved with 50 records.
+[2024-10-08T23:46:09.142+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:09 INFO: Page 89 retrieved with 50 records.
+[2024-10-08T23:46:09.563+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:09 INFO: Page 90 retrieved with 50 records.
+[2024-10-08T23:46:09.981+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:09 INFO: Page 91 retrieved with 50 records.
+[2024-10-08T23:46:10.095+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:10 INFO: Page 92 retrieved with 50 records.
+[2024-10-08T23:46:10.212+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:10 INFO: Page 93 retrieved with 50 records.
+[2024-10-08T23:46:10.625+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:10 INFO: Page 94 retrieved with 50 records.
+[2024-10-08T23:46:10.708+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:10 INFO: Page 95 retrieved with 50 records.
+[2024-10-08T23:46:11.142+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:11 INFO: Page 96 retrieved with 50 records.
+[2024-10-08T23:46:11.228+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:11 INFO: Page 97 retrieved with 50 records.
+[2024-10-08T23:46:11.640+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:11 INFO: Page 98 retrieved with 50 records.
+[2024-10-08T23:46:11.728+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:11 INFO: Page 99 retrieved with 50 records.
+[2024-10-08T23:46:11.811+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:11 INFO: Page 100 retrieved with 50 records.
+[2024-10-08T23:46:12.224+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:12 INFO: Page 101 retrieved with 50 records.
+[2024-10-08T23:46:12.340+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:12 INFO: Page 102 retrieved with 50 records.
+[2024-10-08T23:46:12.880+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:12 INFO: Page 103 retrieved with 50 records.
+[2024-10-08T23:46:13.291+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:13 INFO: Page 104 retrieved with 50 records.
+[2024-10-08T23:46:13.377+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:13 INFO: Page 105 retrieved with 50 records.
+[2024-10-08T23:46:13.466+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:13 INFO: Page 106 retrieved with 50 records.
+[2024-10-08T23:46:13.570+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:13 INFO: Page 107 retrieved with 50 records.
+[2024-10-08T23:46:13.776+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:13 INFO: Page 108 retrieved with 50 records.
+[2024-10-08T23:46:14.208+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:14 INFO: Page 109 retrieved with 50 records.
+[2024-10-08T23:46:14.631+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:14 INFO: Page 110 retrieved with 50 records.
+[2024-10-08T23:46:15.035+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:15 INFO: Page 111 retrieved with 50 records.
+[2024-10-08T23:46:15.124+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:15 INFO: Page 112 retrieved with 50 records.
+[2024-10-08T23:46:15.554+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:15 INFO: Page 113 retrieved with 50 records.
+[2024-10-08T23:46:15.984+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:15 INFO: Page 114 retrieved with 50 records.
+[2024-10-08T23:46:17.044+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:17 INFO: Page 115 retrieved with 50 records.
+[2024-10-08T23:46:17.450+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:17 INFO: Page 116 retrieved with 50 records.
+[2024-10-08T23:46:17.868+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:17 INFO: Page 117 retrieved with 50 records.
+[2024-10-08T23:46:18.385+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:18 INFO: Page 118 retrieved with 50 records.
+[2024-10-08T23:46:18.796+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:18 INFO: Page 119 retrieved with 50 records.
+[2024-10-08T23:46:19.215+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:19 INFO: Page 120 retrieved with 50 records.
+[2024-10-08T23:46:19.623+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:19 INFO: Page 121 retrieved with 50 records.
+[2024-10-08T23:46:20.145+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:20 INFO: Page 122 retrieved with 50 records.
+[2024-10-08T23:46:20.551+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:20 INFO: Page 123 retrieved with 50 records.
+[2024-10-08T23:46:20.959+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:20 INFO: Page 124 retrieved with 50 records.
+[2024-10-08T23:46:21.069+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 125 retrieved with 50 records.
+[2024-10-08T23:46:21.150+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 126 retrieved with 50 records.
+[2024-10-08T23:46:21.249+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 127 retrieved with 50 records.
+[2024-10-08T23:46:21.325+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 128 retrieved with 50 records.
+[2024-10-08T23:46:21.412+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 129 retrieved with 50 records.
+[2024-10-08T23:46:21.549+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 130 retrieved with 50 records.
+[2024-10-08T23:46:21.675+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 131 retrieved with 50 records.
+[2024-10-08T23:46:21.752+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:21 INFO: Page 132 retrieved with 50 records.
+[2024-10-08T23:46:22.294+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:22 INFO: Page 133 retrieved with 50 records.
+[2024-10-08T23:46:22.704+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:22 INFO: Page 134 retrieved with 50 records.
+[2024-10-08T23:46:22.796+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:22 INFO: Page 135 retrieved with 50 records.
+[2024-10-08T23:46:23.214+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:23 INFO: Page 136 retrieved with 50 records.
+[2024-10-08T23:46:23.617+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:23 INFO: Page 137 retrieved with 50 records.
+[2024-10-08T23:46:23.701+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:23 INFO: Page 138 retrieved with 50 records.
+[2024-10-08T23:46:23.824+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:23 INFO: Page 139 retrieved with 50 records.
+[2024-10-08T23:46:24.236+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:24 INFO: Page 140 retrieved with 50 records.
+[2024-10-08T23:46:24.649+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:24 INFO: Page 141 retrieved with 50 records.
+[2024-10-08T23:46:24.753+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:24 INFO: Page 142 retrieved with 50 records.
+[2024-10-08T23:46:25.296+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:25 INFO: Page 143 retrieved with 50 records.
+[2024-10-08T23:46:25.918+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:25 INFO: Page 144 retrieved with 50 records.
+[2024-10-08T23:46:26.336+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:26 INFO: Page 145 retrieved with 50 records.
+[2024-10-08T23:46:26.436+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:26 INFO: Page 146 retrieved with 50 records.
+[2024-10-08T23:46:26.836+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:26 INFO: Page 147 retrieved with 50 records.
+[2024-10-08T23:46:26.917+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:26 INFO: Page 148 retrieved with 50 records.
+[2024-10-08T23:46:27.327+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:27 INFO: Page 149 retrieved with 50 records.
+[2024-10-08T23:46:27.420+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:27 INFO: Page 150 retrieved with 50 records.
+[2024-10-08T23:46:27.835+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:27 INFO: Page 151 retrieved with 50 records.
+[2024-10-08T23:46:27.939+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:27 INFO: Page 152 retrieved with 50 records.
+[2024-10-08T23:46:28.026+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:28 INFO: Page 153 retrieved with 50 records.
+[2024-10-08T23:46:28.124+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:28 INFO: Page 154 retrieved with 50 records.
+[2024-10-08T23:46:28.536+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:28 INFO: Page 155 retrieved with 50 records.
+[2024-10-08T23:46:28.945+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:28 INFO: Page 156 retrieved with 50 records.
+[2024-10-08T23:46:29.347+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:29 INFO: Page 157 retrieved with 50 records.
+[2024-10-08T23:46:29.748+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:29 INFO: Page 158 retrieved with 50 records.
+[2024-10-08T23:46:29.828+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:29 INFO: Page 159 retrieved with 50 records.
+[2024-10-08T23:46:30.238+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:30 INFO: Page 160 retrieved with 50 records.
+[2024-10-08T23:46:30.342+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:30 INFO: Page 161 retrieved with 50 records.
+[2024-10-08T23:46:30.750+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:30 INFO: Page 162 retrieved with 50 records.
+[2024-10-08T23:46:30.855+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:30 INFO: Page 163 retrieved with 50 records.
+[2024-10-08T23:46:31.263+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:31 INFO: Page 164 retrieved with 50 records.
+[2024-10-08T23:46:31.674+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:31 INFO: Page 165 retrieved with 50 records.
+[2024-10-08T23:46:32.077+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:32 INFO: Page 166 retrieved with 50 records.
+[2024-10-08T23:46:32.493+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:32 INFO: Page 167 retrieved with 23 records.
+[2024-10-08T23:46:32.890+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:32 INFO: All data has been retrieved.
+[2024-10-08T23:46:32.890+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:32 INFO: Total records retrieved: 8323
+[2024-10-08T23:46:32.995+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:32 INFO: Data saved to bronze layer at /opt/***/data/bronze_layer/breweries_raw_20241008_234632.json
+[2024-10-08T23:46:32.998+0000] {subprocess.py:93} INFO - 2024-10-08 23:46:32 INFO: Data ingestion process completed successfully in 49.67 seconds.
+[2024-10-08T23:46:33.016+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-10-08T23:46:33.032+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-08T23:46:33.032+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=breweries_data_pipeline, task_id=data_ingestion, run_id=manual__2024-10-08T23:45:40.611116+00:00, execution_date=20241008T234540, start_date=20241008T234542, end_date=20241008T234633
+[2024-10-08T23:46:33.038+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-08T23:46:33.039+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-08T23:46:33.039+0000] {logging_mixin.py:190} INFO - Dag name:breweries_data_pipeline queued_at:2024-10-08 23:45:40.618077+00:00
+[2024-10-08T23:46:33.039+0000] {logging_mixin.py:190} INFO - Task hostname:6aea32cdc444 operator:BashOperator
+[2024-10-08T23:46:33.056+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-08T23:46:33.070+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-08T23:46:33.072+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
