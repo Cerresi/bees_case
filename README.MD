@@ -13,6 +13,7 @@ The main goal of this project is to create an end-to-end data pipeline that:
 - ​	Aggregates the transformed data for analytical purposes.
 - ​	Visualizes the aggregated data to derive insights.
 
+![](local_architecture.png)
 
 
 The pipeline follows the best practices of data engineering, including:
