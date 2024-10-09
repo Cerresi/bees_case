@@ -148,8 +148,8 @@ services:
     command:
       - -c
       - |
-        mkdir -p /sources/logs /sources/dags /sources/plugins
-        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        mkdir -p /sources/logs /sources/dags /sources/plugins /sources/reports
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins,reports}
         exec /entrypoint airflow version
     environment:
       <<: *airflow-common-env
