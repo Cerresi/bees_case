@@ -24,14 +24,14 @@ x-airflow-common:
 
   volumes:
     # Mount local directories into the container for persistence and accessibility
-    - /home/cerresi/BEES_CASE/dags:/opt/airflow/dags
+    - /home/cerresi/bees_case/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
-    - /home/cerresi/BEES_CASE/scripts:/opt/airflow/scripts
-    - /home/cerresi/BEES_CASE/plugins:/opt/airflow/plugins
-    - /home/cerresi/BEES_CASE/data/bronze_layer:/opt/airflow/data/bronze_layer
-    - /home/cerresi/BEES_CASE/data/silver_layer:/opt/airflow/data/silver_layer
-    - /home/cerresi/BEES_CASE/data/gold_layer:/opt/airflow/data/gold_layer
-    - /home/cerresi/BEES_CASE/reports:/opt/airflow/reports
+    - /home/cerresi/bees_case/scripts:/opt/airflow/scripts
+    - /home/cerresi/bees_case/plugins:/opt/airflow/plugins
+    - /home/cerresi/bees_case/data/bronze_layer:/opt/airflow/data/bronze_layer
+    - /home/cerresi/bees_case/data/silver_layer:/opt/airflow/data/silver_layer
+    - /home/cerresi/bees_case/data/gold_layer:/opt/airflow/data/gold_layer
+    - /home/cerresi/bees_case/reports:/opt/airflow/reports
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
