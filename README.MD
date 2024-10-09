@@ -40,7 +40,7 @@ The pipeline follows the best practices of data engineering, including:
 
 **INSTALLATION** 
 
-1. Clone the Repository
+1. Clone the Repository (git clone https://github.com/Cerresi/bees_case.git)
 2. Build and Start the Docker Containers (docker compose up --build)
 3. All dependencies are listed in the requirements.txt file
 
